@@ -1,0 +1,1864 @@
+{
+  "www.microsoft.com": {
+    "runs": {
+      "home-wifi": {
+        "at": "2026-09-22T13:24:12",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.microsoft.com",
+              "www.microsoft.com-c-3.edgekey.net",
+              "e13678.dscb.akamaiedge.net"
+            ],
+            "addrs": [
+              "104.94.218.45"
+            ],
+            "ptr": [
+              "a104-94-218-45.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.microsoft.com",
+              "www.microsoft.com-c-3.edgekey.net",
+              "e13678.dscb.akamaiedge.net"
+            ],
+            "addrs": [
+              "104.94.218.45"
+            ],
+            "ptr": [
+              "a104-94-218-45.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.microsoft.com",
+              "www.microsoft.com-c-3.edgekey.net",
+              "e13678.dscb.akamaiedge.net"
+            ],
+            "addrs": [
+              "23.200.181.232"
+            ],
+            "ptr": [
+              "a23-200-181-232.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.microsoft.com",
+              "www.microsoft.com-c-3.edgekey.net",
+              "e13678.dscb.akamaiedge.net"
+            ],
+            "addrs": [
+              "104.94.218.45"
+            ],
+            "ptr": [
+              "a104-94-218-45.deploy.static.akamaitechnologies.com"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "control": [
+          "104.94.218.45"
+        ],
+        "churn": false
+      },
+      "tethering": {
+        "at": "2026-10-05T23:24:30",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.microsoft.com",
+              "www.microsoft.com-c-3.edgekey.net",
+              "e13678.dscb.akamaiedge.net"
+            ],
+            "addrs": [
+              "23.60.186.45"
+            ],
+            "ptr": [
+              "a23-60-186-45.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.microsoft.com",
+              "www.microsoft.com-c-3.edgekey.net",
+              "e13678.dscb.akamaiedge.net"
+            ],
+            "addrs": [
+              "104.94.218.45"
+            ],
+            "ptr": [
+              "a104-94-218-45.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.microsoft.com",
+              "www.microsoft.com-c-3.edgekey.net",
+              "e13678.dscb.akamaiedge.net"
+            ],
+            "addrs": [
+              "23.63.226.92"
+            ],
+            "ptr": [
+              "a23-63-226-92.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.microsoft.com",
+              "www.microsoft.com-c-3.edgekey.net",
+              "e13678.dscb.akamaiedge.net"
+            ],
+            "addrs": [
+              "23.60.186.45"
+            ],
+            "ptr": [
+              "a23-60-186-45.deploy.static.akamaitechnologies.com"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "172.20.10.1"
+        ],
+        "control": [
+          "23.60.186.45"
+        ],
+        "churn": false
+      }
+    },
+    "chain": [
+      "www.microsoft.com",
+      "www.microsoft.com-c-3.edgekey.net",
+      "e13678.dscb.akamaiedge.net"
+    ],
+    "final": "e13678.dscb.akamaiedge.net"
+  },
+  "www.netflix.com": {
+    "runs": {
+      "home-wifi": {
+        "at": "2026-09-22T13:24:12",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.netflix.com",
+              "www.prod.ftl.netflix.com"
+            ],
+            "addrs": [
+              "207.45.72.1",
+              "207.45.73.1"
+            ],
+            "ptr": [
+              "prod.ftl4.netflix.com",
+              "prod.ftl4.netflix.com"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.netflix.com",
+              "www.prod.ftl.netflix.com"
+            ],
+            "addrs": [
+              "207.45.72.1",
+              "207.45.73.1"
+            ],
+            "ptr": [
+              "prod.ftl4.netflix.com",
+              "prod.ftl4.netflix.com"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.netflix.com",
+              "www.prod.ftl.netflix.com"
+            ],
+            "addrs": [
+              "207.45.72.1",
+              "207.45.73.1"
+            ],
+            "ptr": [
+              "prod.ftl4.netflix.com",
+              "prod.ftl4.netflix.com"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.netflix.com",
+              "www.prod.ftl.netflix.com"
+            ],
+            "addrs": [
+              "207.45.72.1",
+              "207.45.73.1"
+            ],
+            "ptr": [
+              "prod.ftl4.netflix.com",
+              "prod.ftl4.netflix.com"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "control": [
+          "207.45.72.1",
+          "207.45.73.1"
+        ],
+        "churn": false
+      },
+      "tethering": {
+        "at": "2026-10-05T23:24:30",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.netflix.com",
+              "www.prod.ftl.netflix.com"
+            ],
+            "addrs": [
+              "207.45.72.1",
+              "207.45.73.1"
+            ],
+            "ptr": [
+              "prod.ftl4.netflix.com",
+              "prod.ftl4.netflix.com"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.netflix.com",
+              "www.prod.ftl.netflix.com"
+            ],
+            "addrs": [
+              "207.45.72.1",
+              "207.45.73.1"
+            ],
+            "ptr": [
+              "prod.ftl4.netflix.com",
+              "prod.ftl4.netflix.com"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.netflix.com",
+              "www.prod.ftl.netflix.com"
+            ],
+            "addrs": [
+              "207.45.72.1",
+              "207.45.73.1"
+            ],
+            "ptr": [
+              "prod.ftl4.netflix.com",
+              "prod.ftl4.netflix.com"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.netflix.com",
+              "www.prod.ftl.netflix.com"
+            ],
+            "addrs": [
+              "207.45.72.1",
+              "207.45.73.1"
+            ],
+            "ptr": [
+              "prod.ftl4.netflix.com",
+              "prod.ftl4.netflix.com"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "172.20.10.1"
+        ],
+        "control": [
+          "207.45.72.1",
+          "207.45.73.1"
+        ],
+        "churn": false
+      }
+    },
+    "chain": [
+      "www.netflix.com",
+      "www.prod.ftl.netflix.com"
+    ],
+    "final": "www.prod.ftl.netflix.com"
+  },
+  "www.adobe.com": {
+    "runs": {
+      "home-wifi": {
+        "at": "2026-09-22T13:24:12",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.adobe.com",
+              "www.adobe.com.edgesuite.net",
+              "a1319.dscr.akamai.net"
+            ],
+            "addrs": [
+              "182.162.106.137",
+              "182.162.106.147"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.adobe.com",
+              "www.adobe.com.edgesuite.net",
+              "a1319.dscr.akamai.net"
+            ],
+            "addrs": [
+              "182.162.106.137",
+              "182.162.106.147"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.adobe.com",
+              "www.adobe.com.edgesuite.net",
+              "a1319.dscr.akamai.net"
+            ],
+            "addrs": [
+              "23.208.31.135",
+              "23.208.31.177"
+            ],
+            "ptr": [
+              "a23-208-31-135.deploy.static.akamaitechnologies.com",
+              "a23-208-31-177.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.adobe.com",
+              "www.adobe.com.edgesuite.net",
+              "a1319.dscr.akamai.net"
+            ],
+            "addrs": [
+              "23.76.153.115",
+              "23.76.153.122"
+            ],
+            "ptr": [
+              "a23-76-153-115.deploy.static.akamaitechnologies.com",
+              "a23-76-153-122.deploy.static.akamaitechnologies.com"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "control": [
+          "182.162.106.137",
+          "182.162.106.147"
+        ],
+        "churn": false
+      },
+      "tethering": {
+        "at": "2026-10-05T23:24:30",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.adobe.com",
+              "www.adobe.com.edgesuite.net",
+              "a1319.dscr.akamai.net"
+            ],
+            "addrs": [
+              "23.32.56.34",
+              "23.32.56.9"
+            ],
+            "ptr": [
+              "a23-32-56-34.deploy.static.akamaitechnologies.com",
+              "a23-32-56-9.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.adobe.com",
+              "www.adobe.com.edgesuite.net",
+              "a1319.dscr.akamai.net"
+            ],
+            "addrs": [
+              "23.32.4.146",
+              "23.32.4.168",
+              "23.32.4.178",
+              "23.32.4.187",
+              "23.32.4.209",
+              "23.32.4.210",
+              "23.32.4.218"
+            ],
+            "ptr": [
+              "a23-32-4-146.deploy.static.akamaitechnologies.com",
+              "a23-32-4-168.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.adobe.com",
+              "www.adobe.com.edgesuite.net",
+              "a1319.dscr.akamai.net"
+            ],
+            "addrs": [
+              "23.208.31.135",
+              "23.208.31.169",
+              "23.208.31.177"
+            ],
+            "ptr": [
+              "a23-208-31-135.deploy.static.akamaitechnologies.com",
+              "a23-208-31-169.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.adobe.com",
+              "www.adobe.com.edgesuite.net",
+              "a1319.dscr.akamai.net"
+            ],
+            "addrs": [
+              "23.35.218.146",
+              "23.35.218.147"
+            ],
+            "ptr": [
+              "a23-35-218-146.deploy.static.akamaitechnologies.com",
+              "a23-35-218-147.deploy.static.akamaitechnologies.com"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "172.20.10.1"
+        ],
+        "control": [
+          "23.32.56.34",
+          "23.32.56.9"
+        ],
+        "churn": false
+      }
+    },
+    "chain": [
+      "www.adobe.com",
+      "www.adobe.com.edgesuite.net",
+      "a1319.dscr.akamai.net"
+    ],
+    "final": "a1319.dscr.akamai.net"
+  },
+  "www.cnn.com": {
+    "runs": {
+      "home-wifi": {
+        "at": "2026-09-22T13:24:12",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.cnn.com",
+              "cnn-tls.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.131.5",
+              "151.101.195.5",
+              "151.101.3.5",
+              "151.101.67.5"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.cnn.com",
+              "cnn-tls.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.131.5",
+              "151.101.195.5",
+              "151.101.3.5",
+              "151.101.67.5"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.cnn.com",
+              "cnn-tls.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.131.5",
+              "151.101.195.5",
+              "151.101.3.5",
+              "151.101.67.5"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.cnn.com",
+              "cnn-tls.map.fastly.net"
+            ],
+            "addrs": [
+              "146.75.51.5"
+            ],
+            "ptr": [
+              ""
+            ]
+          }
+        },
+        "system_nameserver": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "control": [
+          "151.101.131.5",
+          "151.101.195.5",
+          "151.101.3.5",
+          "151.101.67.5"
+        ],
+        "churn": false
+      },
+      "tethering": {
+        "at": "2026-10-05T23:24:30",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.cnn.com",
+              "cnn-tls.map.fastly.net"
+            ],
+            "addrs": [
+              "146.75.51.5"
+            ],
+            "ptr": [
+              ""
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.cnn.com",
+              "cnn-tls.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.131.5",
+              "151.101.195.5",
+              "151.101.3.5",
+              "151.101.67.5"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.cnn.com",
+              "cnn-tls.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.131.5",
+              "151.101.195.5",
+              "151.101.3.5",
+              "151.101.67.5"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.cnn.com",
+              "cnn-tls.map.fastly.net"
+            ],
+            "addrs": [
+              "146.75.51.5"
+            ],
+            "ptr": [
+              ""
+            ]
+          }
+        },
+        "system_nameserver": [
+          "172.20.10.1"
+        ],
+        "control": [
+          "146.75.51.5"
+        ],
+        "churn": false
+      }
+    },
+    "chain": [
+      "www.cnn.com",
+      "cnn-tls.map.fastly.net"
+    ],
+    "final": "cnn-tls.map.fastly.net"
+  },
+  "www.apple.com": {
+    "runs": {
+      "home-wifi": {
+        "at": "2026-09-22T13:24:12",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.apple.com",
+              "www-apple-com.v.aaplimg.com",
+              "www.apple.com.edgekey.net",
+              "e6858.dsce9.akamaiedge.net"
+            ],
+            "addrs": [
+              "23.197.225.61"
+            ],
+            "ptr": [
+              "a23-197-225-61.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.apple.com",
+              "www-apple-com.v.aaplimg.com",
+              "www.apple.com.edgekey.net",
+              "e6858.dsce9.akamaiedge.net"
+            ],
+            "addrs": [
+              "23.49.205.28"
+            ],
+            "ptr": [
+              "a23-49-205-28.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.apple.com",
+              "www-apple-com.v.aaplimg.com",
+              "www.apple.com.edgekey.net",
+              "e6858.dsce9.akamaiedge.net"
+            ],
+            "addrs": [
+              "184.31.228.249"
+            ],
+            "ptr": [
+              "a184-31-228-249.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.apple.com",
+              "www-apple-com.v.aaplimg.com",
+              "www.apple.com.edgekey.net",
+              "e6858.dsce9.akamaiedge.net"
+            ],
+            "addrs": [
+              "104.94.216.37"
+            ],
+            "ptr": [
+              "a104-94-216-37.deploy.static.akamaitechnologies.com"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "control": [
+          "23.49.205.28"
+        ],
+        "churn": true
+      },
+      "tethering": {
+        "at": "2026-10-05T23:24:30",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.apple.com",
+              "www-apple-com.v.aaplimg.com",
+              "www.apple.com.edgekey.net",
+              "e6858.dsce9.akamaiedge.net"
+            ],
+            "addrs": [
+              "23.60.185.29"
+            ],
+            "ptr": [
+              "a23-60-185-29.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.apple.com",
+              "www-apple-com.v.aaplimg.com",
+              "www.apple.com.edgekey.net",
+              "e6858.dsce9.akamaiedge.net"
+            ],
+            "addrs": [
+              "23.60.185.29"
+            ],
+            "ptr": [
+              "a23-60-185-29.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.apple.com",
+              "www-apple-com.v.aaplimg.com",
+              "www.apple.com.edgekey.net",
+              "e6858.dsce9.akamaiedge.net"
+            ],
+            "addrs": [
+              "23.210.107.50"
+            ],
+            "ptr": [
+              "a23-210-107-50.deploy.static.akamaitechnologies.com"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.apple.com",
+              "www-apple-com.v.aaplimg.com",
+              "www.apple.com.edgekey.net",
+              "e6858.dsce9.akamaiedge.net"
+            ],
+            "addrs": [
+              "23.60.185.29"
+            ],
+            "ptr": [
+              "a23-60-185-29.deploy.static.akamaitechnologies.com"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "172.20.10.1"
+        ],
+        "control": [
+          "23.60.185.29"
+        ],
+        "churn": false
+      }
+    },
+    "chain": [
+      "www.apple.com",
+      "www-apple-com.v.aaplimg.com",
+      "www.apple.com.edgekey.net",
+      "e6858.dsce9.akamaiedge.net"
+    ],
+    "final": "e6858.dsce9.akamaiedge.net"
+  },
+  "www.korea.ac.kr": {
+    "runs": {
+      "home-wifi": {
+        "at": "2026-09-22T13:24:12",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.korea.ac.kr"
+            ],
+            "addrs": [
+              "163.152.6.10"
+            ],
+            "ptr": [
+              "60.korea.ac.kr"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.korea.ac.kr"
+            ],
+            "addrs": [
+              "163.152.6.10"
+            ],
+            "ptr": [
+              "60.korea.ac.kr"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.korea.ac.kr"
+            ],
+            "addrs": [
+              "163.152.6.10"
+            ],
+            "ptr": [
+              "www.korea.ac.kr"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.korea.ac.kr"
+            ],
+            "addrs": [
+              "163.152.6.10"
+            ],
+            "ptr": [
+              "60.korea.ac.kr"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "control": [
+          "163.152.6.10"
+        ],
+        "churn": false
+      },
+      "tethering": {
+        "at": "2026-10-05T23:24:30",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.korea.ac.kr"
+            ],
+            "addrs": [
+              "163.152.6.10"
+            ],
+            "ptr": [
+              "www.korea.ac.kr"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.korea.ac.kr"
+            ],
+            "addrs": [
+              "163.152.6.10"
+            ],
+            "ptr": [
+              "www.korea.ac.kr"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.korea.ac.kr"
+            ],
+            "addrs": [
+              "163.152.6.10"
+            ],
+            "ptr": [
+              "www.korea.ac.kr"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.korea.ac.kr"
+            ],
+            "addrs": [
+              "163.152.6.10"
+            ],
+            "ptr": [
+              "www.korea.ac.kr"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "172.20.10.1"
+        ],
+        "control": [
+          "163.152.6.10"
+        ],
+        "churn": false
+      }
+    },
+    "chain": [
+      "www.korea.ac.kr"
+    ],
+    "final": "www.korea.ac.kr"
+  },
+  "www.stanford.edu": {
+    "runs": {
+      "home-wifi": {
+        "at": "2026-09-22T13:24:12",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.stanford.edu",
+              "stanford.netlifyglobalcdn.com"
+            ],
+            "addrs": [
+              "15.197.167.90",
+              "3.33.186.135"
+            ],
+            "ptr": [
+              "afa7f374f51cc8991.awsglobalaccelerator.com",
+              "afa7f374f51cc8991.awsglobalaccelerator.com"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.stanford.edu",
+              "stanford.netlifyglobalcdn.com"
+            ],
+            "addrs": [
+              "15.197.167.90",
+              "3.33.186.135"
+            ],
+            "ptr": [
+              "afa7f374f51cc8991.awsglobalaccelerator.com",
+              "afa7f374f51cc8991.awsglobalaccelerator.com"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.stanford.edu",
+              "stanford.netlifyglobalcdn.com"
+            ],
+            "addrs": [
+              "15.197.167.90",
+              "3.33.186.135"
+            ],
+            "ptr": [
+              "afa7f374f51cc8991.awsglobalaccelerator.com",
+              "afa7f374f51cc8991.awsglobalaccelerator.com"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.stanford.edu",
+              "stanford.netlifyglobalcdn.com"
+            ],
+            "addrs": [
+              "15.197.167.90",
+              "3.33.186.135"
+            ],
+            "ptr": [
+              "afa7f374f51cc8991.awsglobalaccelerator.com",
+              "afa7f374f51cc8991.awsglobalaccelerator.com"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "control": [
+          "15.197.167.90",
+          "3.33.186.135"
+        ],
+        "churn": false
+      },
+      "tethering": {
+        "at": "2026-10-05T23:24:30",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.stanford.edu",
+              "stanford.netlifyglobalcdn.com"
+            ],
+            "addrs": [
+              "15.197.167.90",
+              "3.33.186.135"
+            ],
+            "ptr": [
+              "afa7f374f51cc8991.awsglobalaccelerator.com",
+              "afa7f374f51cc8991.awsglobalaccelerator.com"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.stanford.edu",
+              "stanford.netlifyglobalcdn.com"
+            ],
+            "addrs": [
+              "15.197.167.90",
+              "3.33.186.135"
+            ],
+            "ptr": [
+              "afa7f374f51cc8991.awsglobalaccelerator.com",
+              "afa7f374f51cc8991.awsglobalaccelerator.com"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.stanford.edu",
+              "stanford.netlifyglobalcdn.com"
+            ],
+            "addrs": [
+              "15.197.167.90",
+              "3.33.186.135"
+            ],
+            "ptr": [
+              "afa7f374f51cc8991.awsglobalaccelerator.com",
+              "afa7f374f51cc8991.awsglobalaccelerator.com"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.stanford.edu",
+              "stanford.netlifyglobalcdn.com"
+            ],
+            "addrs": [
+              "15.197.167.90",
+              "3.33.186.135"
+            ],
+            "ptr": [
+              "afa7f374f51cc8991.awsglobalaccelerator.com",
+              "afa7f374f51cc8991.awsglobalaccelerator.com"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "172.20.10.1"
+        ],
+        "control": [
+          "15.197.167.90",
+          "3.33.186.135"
+        ],
+        "churn": false
+      }
+    },
+    "chain": [
+      "www.stanford.edu",
+      "stanford.netlifyglobalcdn.com"
+    ],
+    "final": "stanford.netlifyglobalcdn.com"
+  },
+  "www.bbc.co.uk": {
+    "runs": {
+      "home-wifi": {
+        "at": "2026-09-22T13:24:12",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.bbc.co.uk",
+              "www.bbc.co.uk.pri.bbc.co.uk",
+              "bbc.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.0.81",
+              "151.101.128.81",
+              "151.101.192.81",
+              "151.101.64.81"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.bbc.co.uk",
+              "www.bbc.co.uk.pri.bbc.co.uk",
+              "bbc.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.0.81",
+              "151.101.128.81",
+              "151.101.192.81",
+              "151.101.64.81"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.bbc.co.uk",
+              "www.bbc.co.uk.pri.bbc.co.uk",
+              "bbc.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.0.81",
+              "151.101.128.81",
+              "151.101.192.81",
+              "151.101.64.81"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.bbc.co.uk",
+              "www.bbc.co.uk.pri.bbc.co.uk",
+              "bbc.map.fastly.net"
+            ],
+            "addrs": [
+              "146.75.48.81"
+            ],
+            "ptr": [
+              ""
+            ]
+          }
+        },
+        "system_nameserver": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "control": [
+          "151.101.0.81",
+          "151.101.128.81",
+          "151.101.192.81",
+          "151.101.64.81"
+        ],
+        "churn": false
+      },
+      "tethering": {
+        "at": "2026-10-05T23:24:30",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.bbc.co.uk",
+              "www.bbc.co.uk.pri.bbc.co.uk",
+              "bbc.map.fastly.net"
+            ],
+            "addrs": [
+              "146.75.48.81"
+            ],
+            "ptr": [
+              ""
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.bbc.co.uk",
+              "www.bbc.co.uk.pri.bbc.co.uk",
+              "bbc.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.0.81",
+              "151.101.128.81",
+              "151.101.192.81",
+              "151.101.64.81"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.bbc.co.uk",
+              "www.bbc.co.uk.pri.bbc.co.uk",
+              "bbc.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.0.81",
+              "151.101.128.81",
+              "151.101.192.81",
+              "151.101.64.81"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.bbc.co.uk",
+              "www.bbc.co.uk.pri.bbc.co.uk",
+              "bbc.map.fastly.net"
+            ],
+            "addrs": [
+              "146.75.48.81"
+            ],
+            "ptr": [
+              ""
+            ]
+          }
+        },
+        "system_nameserver": [
+          "172.20.10.1"
+        ],
+        "control": [
+          "146.75.48.81"
+        ],
+        "churn": false
+      }
+    },
+    "chain": [
+      "www.bbc.co.uk",
+      "www.bbc.co.uk.pri.bbc.co.uk",
+      "bbc.map.fastly.net"
+    ],
+    "final": "bbc.map.fastly.net"
+  },
+  "www.spotify.com": {
+    "runs": {
+      "home-wifi": {
+        "at": "2026-09-22T13:24:12",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.spotify.com",
+              "atc.spotify.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.131.42",
+              "151.101.195.42",
+              "151.101.3.42",
+              "151.101.67.42"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.spotify.com",
+              "atc.spotify.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.131.42",
+              "151.101.195.42",
+              "151.101.3.42",
+              "151.101.67.42"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.spotify.com",
+              "atc.spotify.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.131.42",
+              "151.101.195.42",
+              "151.101.3.42",
+              "151.101.67.42"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.spotify.com",
+              "atc.spotify.map.fastly.net"
+            ],
+            "addrs": [
+              "146.75.51.42"
+            ],
+            "ptr": [
+              ""
+            ]
+          }
+        },
+        "system_nameserver": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "control": [
+          "151.101.131.42",
+          "151.101.195.42",
+          "151.101.3.42",
+          "151.101.67.42"
+        ],
+        "churn": false
+      },
+      "tethering": {
+        "at": "2026-10-05T23:24:30",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.spotify.com",
+              "atc.spotify.map.fastly.net"
+            ],
+            "addrs": [
+              "146.75.51.42"
+            ],
+            "ptr": [
+              ""
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.spotify.com",
+              "atc.spotify.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.131.42",
+              "151.101.195.42",
+              "151.101.3.42",
+              "151.101.67.42"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.spotify.com",
+              "atc.spotify.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.131.42",
+              "151.101.195.42",
+              "151.101.3.42",
+              "151.101.67.42"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.spotify.com",
+              "atc.spotify.map.fastly.net"
+            ],
+            "addrs": [
+              "146.75.51.42"
+            ],
+            "ptr": [
+              ""
+            ]
+          }
+        },
+        "system_nameserver": [
+          "172.20.10.1"
+        ],
+        "control": [
+          "146.75.51.42"
+        ],
+        "churn": false
+      }
+    },
+    "chain": [
+      "www.spotify.com",
+      "atc.spotify.map.fastly.net"
+    ],
+    "final": "atc.spotify.map.fastly.net"
+  },
+  "www.github.com": {
+    "runs": {
+      "home-wifi": {
+        "at": "2026-09-22T13:24:12",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.github.com",
+              "github.com"
+            ],
+            "addrs": [
+              "20.200.245.247"
+            ],
+            "ptr": [
+              ""
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.github.com",
+              "github.com"
+            ],
+            "addrs": [
+              "20.200.245.247"
+            ],
+            "ptr": [
+              ""
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.github.com",
+              "github.com"
+            ],
+            "addrs": [
+              "20.205.243.166"
+            ],
+            "ptr": [
+              ""
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.github.com",
+              "github.com"
+            ],
+            "addrs": [
+              "20.200.245.247"
+            ],
+            "ptr": [
+              ""
+            ]
+          }
+        },
+        "system_nameserver": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "control": [
+          "20.200.245.247"
+        ],
+        "churn": false
+      },
+      "tethering": {
+        "at": "2026-10-05T23:24:30",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.github.com",
+              "github.com"
+            ],
+            "addrs": [
+              "20.200.245.247"
+            ],
+            "ptr": [
+              ""
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.github.com",
+              "github.com"
+            ],
+            "addrs": [
+              "20.200.245.247"
+            ],
+            "ptr": [
+              ""
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.github.com",
+              "github.com"
+            ],
+            "addrs": [
+              "20.205.243.166"
+            ],
+            "ptr": [
+              ""
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.github.com",
+              "github.com"
+            ],
+            "addrs": [
+              "20.200.245.247"
+            ],
+            "ptr": [
+              ""
+            ]
+          }
+        },
+        "system_nameserver": [
+          "172.20.10.1"
+        ],
+        "control": [
+          "20.200.245.247"
+        ],
+        "churn": false
+      }
+    },
+    "chain": [
+      "www.github.com",
+      "github.com"
+    ],
+    "final": "github.com"
+  },
+  "www.wikipedia.org": {
+    "runs": {
+      "home-wifi": {
+        "at": "2026-09-22T13:24:12",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.wikipedia.org",
+              "dyna.wikimedia.org"
+            ],
+            "addrs": [
+              "103.102.166.224"
+            ],
+            "ptr": [
+              "text-lb.eqsin.wikimedia.org"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.wikipedia.org",
+              "dyna.wikimedia.org"
+            ],
+            "addrs": [
+              "103.102.166.224"
+            ],
+            "ptr": [
+              "text-lb.eqsin.wikimedia.org"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.wikipedia.org",
+              "dyna.wikimedia.org"
+            ],
+            "addrs": [
+              "103.102.166.224"
+            ],
+            "ptr": [
+              "text-lb.eqsin.wikimedia.org"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.wikipedia.org",
+              "dyna.wikimedia.org"
+            ],
+            "addrs": [
+              "103.102.166.224"
+            ],
+            "ptr": [
+              "text-lb.eqsin.wikimedia.org"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "control": [
+          "103.102.166.224"
+        ],
+        "churn": false
+      },
+      "tethering": {
+        "at": "2026-10-05T23:24:30",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.wikipedia.org",
+              "dyna.wikimedia.org"
+            ],
+            "addrs": [
+              "103.102.166.224"
+            ],
+            "ptr": [
+              "text-lb.eqsin.wikimedia.org"
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.wikipedia.org",
+              "dyna.wikimedia.org"
+            ],
+            "addrs": [
+              "103.102.166.224"
+            ],
+            "ptr": [
+              "text-lb.eqsin.wikimedia.org"
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.wikipedia.org",
+              "dyna.wikimedia.org"
+            ],
+            "addrs": [
+              "103.102.166.224"
+            ],
+            "ptr": [
+              "text-lb.eqsin.wikimedia.org"
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.wikipedia.org",
+              "dyna.wikimedia.org"
+            ],
+            "addrs": [
+              "103.102.166.224"
+            ],
+            "ptr": [
+              "text-lb.eqsin.wikimedia.org"
+            ]
+          }
+        },
+        "system_nameserver": [
+          "172.20.10.1"
+        ],
+        "control": [
+          "103.102.166.224"
+        ],
+        "churn": false
+      }
+    },
+    "chain": [
+      "www.wikipedia.org",
+      "dyna.wikimedia.org"
+    ],
+    "final": "dyna.wikimedia.org"
+  },
+  "www.nytimes.com": {
+    "runs": {
+      "home-wifi": {
+        "at": "2026-09-22T13:24:12",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.nytimes.com",
+              "www.prd.map.nytimes.com",
+              "www.prd.map.nytimes.xovr.nyt.net",
+              "nytimes.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.1.164",
+              "151.101.129.164",
+              "151.101.193.164",
+              "151.101.65.164"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.nytimes.com",
+              "www.prd.map.nytimes.com",
+              "www.prd.map.nytimes.xovr.nyt.net",
+              "nytimes.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.1.164",
+              "151.101.129.164",
+              "151.101.193.164",
+              "151.101.65.164"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.nytimes.com",
+              "www.prd.map.nytimes.com",
+              "www.prd.map.nytimes.xovr.nyt.net",
+              "nytimes.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.1.164",
+              "151.101.129.164",
+              "151.101.193.164",
+              "151.101.65.164"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.nytimes.com",
+              "www.prd.map.nytimes.com",
+              "www.prd.map.nytimes.xovr.nyt.net",
+              "nytimes.map.fastly.net"
+            ],
+            "addrs": [
+              "146.75.49.164"
+            ],
+            "ptr": [
+              ""
+            ]
+          }
+        },
+        "system_nameserver": [
+          "8.8.8.8",
+          "8.8.4.4"
+        ],
+        "control": [
+          "151.101.1.164",
+          "151.101.129.164",
+          "151.101.193.164",
+          "151.101.65.164"
+        ],
+        "churn": false
+      },
+      "tethering": {
+        "at": "2026-10-05T23:24:30",
+        "resolvers": {
+          "system": {
+            "server": null,
+            "chain": [
+              "www.nytimes.com",
+              "www.prd.map.nytimes.com",
+              "www.prd.map.nytimes.xovr.nyt.net",
+              "nytimes.map.fastly.net"
+            ],
+            "addrs": [
+              "146.75.49.164"
+            ],
+            "ptr": [
+              ""
+            ]
+          },
+          "google": {
+            "server": "8.8.8.8",
+            "chain": [
+              "www.nytimes.com",
+              "www.prd.map.nytimes.com",
+              "www.prd.map.nytimes.xovr.nyt.net",
+              "nytimes.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.1.164",
+              "151.101.129.164",
+              "151.101.193.164",
+              "151.101.65.164"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "quad9": {
+            "server": "9.9.9.9",
+            "chain": [
+              "www.nytimes.com",
+              "www.prd.map.nytimes.com",
+              "www.prd.map.nytimes.xovr.nyt.net",
+              "nytimes.map.fastly.net"
+            ],
+            "addrs": [
+              "151.101.1.164",
+              "151.101.129.164",
+              "151.101.193.164",
+              "151.101.65.164"
+            ],
+            "ptr": [
+              "",
+              ""
+            ]
+          },
+          "kt": {
+            "server": "168.126.63.1",
+            "chain": [
+              "www.nytimes.com",
+              "www.prd.map.nytimes.com",
+              "www.prd.map.nytimes.xovr.nyt.net",
+              "nytimes.map.fastly.net"
+            ],
+            "addrs": [
+              "146.75.49.164"
+            ],
+            "ptr": [
+              ""
+            ]
+          }
+        },
+        "system_nameserver": [
+          "172.20.10.1"
+        ],
+        "control": [
+          "146.75.49.164"
+        ],
+        "churn": false
+      }
+    },
+    "chain": [
+      "www.nytimes.com",
+      "www.prd.map.nytimes.com",
+      "www.prd.map.nytimes.xovr.nyt.net",
+      "nytimes.map.fastly.net"
+    ],
+    "final": "nytimes.map.fastly.net"
+  }
+}
