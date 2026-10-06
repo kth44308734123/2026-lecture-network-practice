@@ -38,7 +38,7 @@ eTLD+1로 비교하는 이유는 `www.bbc.co.uk`에서 "마지막 두 라벨"이
 — 사슬이 `dyna.wikimedia.org`에서 끝나 도메인이 다르기 때문이다. 그러나 두 도메인 모두
 Wikimedia 재단이 직접 운영하고, PTR도 `text-lb.eqsin.wikimedia.org`로 자체 설비를 가리킨다.
 **내 규칙도 틀린 데가 있다**: `www.github.com`은 사슬이 `github.com` 안에서 끝나므로 "자체"로
-판정되지만, 실제 주소 20.200.245.247은 whois상 Microsoft(Azure) 소유다. CNAME 사슬은 누가
+판정되지만, 실제 주소 20.200.245.247은 whois로 직접 확인하니 Microsoft Corporation(MSFT) 소유다. CNAME 사슬은 누가
 호스팅하는지가 아니라 **누가 이름을 관리하는지**만 보여준다 — 규칙의 한계는 규칙이 아니라
 증거의 한계다.
 
