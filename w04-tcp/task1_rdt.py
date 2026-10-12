@@ -53,40 +53,74 @@ class UnreliableChannel:
 
 
 class Sender:
-    """Your sender.
+    """Selective-repeat sliding window.
 
-    Requirements are in task1.md. The short version:
+    Stop-and-wait would be simpler, but with 10% loss on *both* directions it
+    spends most steps idle. The window keeps WINDOW packets in flight, and each
+    packet has its own retransmit timer, so one loss never stalls the others.
 
-      - break `data` into PAYLOAD-sized pieces and number them
-      - retransmit what is not acknowledged
-      - do not assume an ACK means what you think it means until you have
-        checked the number on it
-
-    You choose the protocol: stop-and-wait is the easiest to get right and the
-    slowest; a sliding window is the point of §3.4.3. Say which you chose and
-    why in observation.md.
+    The ACK carries the sequence number it acknowledges. Matching that number
+    against what we actually sent is what makes duplicate and stale ACKs
+    harmless: an ACK for something already acknowledged changes nothing.
     """
+    WINDOW = 8
+    RTO = 25            # steps to wait before assuming a packet is lost
 
     def __init__(self, data_channel, ack_channel, data):
-        raise NotImplementedError("write your sender")
+        self.up, self.down = data_channel, ack_channel
+        self.chunks = [data[i:i + PAYLOAD] for i in range(0, len(data), PAYLOAD)]
+        self.acked = set()
+        self.sent_at = {}           # seq -> step of last (re)transmission
+        self.base = 0               # lowest unacknowledged seq
+        self.now = 0
 
     def step(self):
-        """Do one unit of work. Return False when you believe you are done."""
-        raise NotImplementedError
+        self.now += 1
+        pkt = self.down.receive()
+        if pkt is not None and pkt[0] == "A" and 0 <= pkt[1] < len(self.chunks):
+            self.acked.add(pkt[1])
+            while self.base in self.acked:
+                self.base += 1
+        if self.base >= len(self.chunks):
+            return False
+        # send at most one packet per step: the first unacked seq in the window
+        # that was never sent or whose timer ran out
+        top = min(self.base + self.WINDOW, len(self.chunks))
+        for seq in range(self.base, top):
+            if seq in self.acked:
+                continue
+            if seq not in self.sent_at or self.now - self.sent_at[seq] >= self.RTO:
+                self.sent_at[seq] = self.now
+                self.up.send(("D", seq, self.chunks[seq]))
+                break
+        return True
 
 
 class Receiver:
-    """Your receiver. Hands back the reassembled bytes via `.data()`."""
+    """Buffers out-of-order packets, delivers the contiguous prefix."""
 
     def __init__(self, data_channel, ack_channel):
-        raise NotImplementedError("write your receiver")
+        self.up, self.down = data_channel, ack_channel
+        self.buf = {}               # seq -> payload (dict makes duplicates idempotent)
+        self.next = 0               # next seq needed for in-order delivery
+        self.out = bytearray()
 
     def step(self):
-        raise NotImplementedError
+        pkt = self.up.receive()
+        if pkt is None or pkt[0] != "D":
+            return
+        _, seq, payload = pkt
+        if seq >= self.next:
+            self.buf.setdefault(seq, payload)
+        while self.next in self.buf:
+            self.out += self.buf.pop(self.next)
+            self.next += 1
+        # always ACK, even a duplicate: the previous ACK may have been the one lost
+        self.down.send(("A", seq))
 
     def data(self):
         """The bytes reassembled so far."""
-        raise NotImplementedError
+        return bytes(self.out)
 
 
 # ------------------------------------------------------------------- harness

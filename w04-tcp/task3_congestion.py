@@ -38,6 +38,9 @@ class FixedWindow:
         pass
 
 
+BETA = 0.7        # multiplicative decrease factor
+
+
 class YourControl:
     """Your congestion control.
 
@@ -54,11 +57,22 @@ class YourControl:
     """
 
     def __init__(self):
-        self.window = 1
-        raise NotImplementedError("write your congestion control")
+        self.window = 1.0
+        self.ssthresh = 1e9          # unknown until the first loss
+        self.since_cut = 0           # acks seen since the last backoff
+        self.acked_at_cut = 20       # one RTT worth of acks before cutting again
 
     def on_ack(self):
-        raise NotImplementedError
+        self.since_cut += 1
+        if self.window < self.ssthresh:
+            self.window += 1.0                  # slow start: doubles every RTT
+        else:
+            self.window += 1.0 / self.window    # congestion avoidance: +1 per RTT
 
     def on_loss(self):
-        raise NotImplementedError
+        # Timeouts arrive in a burst for one overflow; react to the burst once.
+        if self.since_cut < self.acked_at_cut:
+            return
+        self.since_cut = 0
+        self.ssthresh = max(2.0, self.window * BETA)
+        self.window = self.ssthresh
