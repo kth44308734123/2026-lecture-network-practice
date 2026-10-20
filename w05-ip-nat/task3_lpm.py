@@ -55,10 +55,21 @@ class YourTable:
     """
 
     def __init__(self):
-        raise NotImplementedError("write your table")
+        self.by_len = {}                      # plen -> {network: next_hop}
+        self.order = []                       # plens present, longest first
+        self.masks = {}
 
     def add(self, network, prefix_len, next_hop):
-        raise NotImplementedError
+        if prefix_len not in self.by_len:
+            self.by_len[prefix_len] = {}
+            self.masks[prefix_len] = (0xFFFFFFFF << (32 - prefix_len)) & 0xFFFFFFFF
+            self.order = sorted(self.by_len, reverse=True)
+        self.by_len[prefix_len][network] = next_hop
 
     def lookup(self, address):
-        raise NotImplementedError
+        # longest first, so the first hit is the longest match: stop there
+        for plen in self.order:
+            hop = self.by_len[plen].get(address & self.masks[plen])
+            if hop is not None:
+                return hop
+        return None

@@ -16,6 +16,21 @@ exactly the thing you are supposed to understand this week.
 import argparse
 
 
+def _mask(plen):
+    return (0xFFFFFFFF << (32 - plen)) & 0xFFFFFFFF
+
+
+def _dotted(ip):
+    return ".".join(str((ip >> shift) & 0xFF) for shift in (24, 16, 8, 0))
+
+
+def _to_int(address):
+    ip = 0
+    for o in address.split("."):
+        ip = (ip << 8) | int(o)
+    return ip
+
+
 def parse_cidr(cidr):
     """'163.152.6.0/24' -> (network as int, prefix length).
 
@@ -23,7 +38,22 @@ def parse_cidr(cidr):
     whose host bits are set when they should not be (163.152.6.5/24 is a
     common way to write a host, but it is not a network).
     """
-    raise NotImplementedError("parse a CIDR block")
+    addr, _, plen = cidr.partition("/")
+    if not plen.isdigit():
+        raise ValueError(f"bad prefix length in {cidr!r}")
+    plen = int(plen)
+    if not 0 <= plen <= 32:
+        raise ValueError(f"prefix length {plen} outside 0-32")
+    octets = addr.split(".")
+    if len(octets) != 4 or not all(o.isdigit() and 0 <= int(o) <= 255 for o in octets):
+        raise ValueError(f"bad address in {cidr!r}")
+    ip = 0
+    for o in octets:                       # four bytes -> one 32-bit integer
+        ip = (ip << 8) | int(o)
+    mask = _mask(plen)
+    if ip & ~mask & 0xFFFFFFFF:            # any host bit set -> not a network
+        raise ValueError(f"{cidr!r} has host bits set")
+    return ip, plen
 
 
 def network_range(cidr):
@@ -32,7 +62,14 @@ def network_range(cidr):
     Careful at the edges. /31 and /32 do not have a usable host range in the
     ordinary sense - decide what you return and say so in observation.md.
     """
-    raise NotImplementedError("compute the range")
+    net, plen = parse_cidr(cidr)
+    size = 1 << (32 - plen)
+    last = net + size - 1                  # the broadcast address
+    if plen >= 31:
+        # /32: one address, no network/broadcast. /31: two addresses, both usable
+        # on point-to-point links (RFC 3021). So first = net, last = broadcast.
+        return _dotted(net), _dotted(last), _dotted(last)
+    return _dotted(net + 1), _dotted(last - 1), _dotted(last)
 
 
 class ForwardingTable:
@@ -45,11 +82,20 @@ class ForwardingTable:
     length, the table is malformed - say what you do.
     """
 
+    def __init__(self):
+        self.routes = {}                   # (network, plen) -> next hop
+
     def add(self, cidr, next_hop):
-        raise NotImplementedError
+        # same (network, plen) added twice: the later one replaces the earlier
+        self.routes[parse_cidr(cidr)] = next_hop
 
     def lookup(self, address):
-        raise NotImplementedError
+        ip = _to_int(address)
+        best = None                        # (plen, next hop)
+        for (net, plen), hop in self.routes.items():
+            if ip & _mask(plen) == net and (best is None or plen > best[0]):
+                best = (plen, hop)
+        return best[1] if best else None
 
 
 # ------------------------------------------------------------------- harness

@@ -1,0 +1,11 @@
+
+  5,000 prefixes, 20,000 queries
+
+  baseline   build   0.00s   lookup  11.816s        1,693 lookups/s
+  yours      build   0.00s   lookup   0.005s    4,013,747 lookups/s   wrong 0
+
+   ok    every answer matches
+   lookup speedup  2371.4x
+
+   -> strong
+
