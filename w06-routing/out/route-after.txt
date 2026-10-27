@@ -1,0 +1,34 @@
+===== r1 : show ip route ospf (after cut of r1 eth1, taken ~45s after cut) =====
+O   172.18.0.0/16 [110/10] is directly connected, eth0, weight 1, 00:02:51
+O>* 172.19.0.0/16 [110/30] via 172.18.0.2, eth0, weight 1, 00:00:52
+O>* 172.20.0.0/16 [110/20] via 172.18.0.2, eth0, weight 1, 00:00:52
+
+===== r2 : show ip route ospf (after cut of r1 eth1, taken ~45s after cut) =====
+O   172.18.0.0/16 [110/10] is directly connected, eth0, weight 1, 00:02:52
+O>* 172.19.0.0/16 [110/20] via 172.20.0.2, eth1, weight 1, 00:00:52
+O   172.20.0.0/16 [110/10] is directly connected, eth1, weight 1, 00:02:52
+
+===== r3 : show ip route ospf (after cut of r1 eth1, taken ~45s after cut) =====
+O>* 172.18.0.0/16 [110/20] via 172.20.0.3, eth1, weight 1, 00:00:52
+O   172.19.0.0/16 [110/10] is directly connected, eth0, weight 1, 00:02:52
+O   172.20.0.0/16 [110/10] is directly connected, eth1, weight 1, 00:02:52
+
+===== r1 : show ip ospf neighbor =====
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+2.2.2.2           1 Full/DR         2m01s             38.576s 172.18.0.2      eth0:172.18.0.3                      0     0     0
+
+
+===== r2 : show ip ospf neighbor =====
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+1.1.1.1           1 Full/Backup     2m01s             38.559s 172.18.0.3      eth0:172.18.0.2                      0     0     0
+3.3.3.3           1 Full/DR         2m06s             38.451s 172.20.0.2      eth1:172.20.0.3                      0     0     0
+
+
+===== r3 : show ip ospf neighbor =====
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+2.2.2.2           1 Full/Backup     2m06s             38.410s 172.20.0.3      eth1:172.20.0.2                      0     0     0
+
+

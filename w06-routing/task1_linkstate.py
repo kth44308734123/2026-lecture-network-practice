@@ -13,7 +13,7 @@ in the packet. Build it.
 
     python3 task1_linkstate.py --verify
 """
-import argparse
+import argparse, heapq
 
 # Undirected weighted graph: node -> {neighbour: cost}
 TOPOLOGY = {
@@ -33,7 +33,18 @@ def dijkstra(graph, source):
 
     You write the loop. `heapq` is allowed; `networkx` is not.
     """
-    raise NotImplementedError("implement Dijkstra")
+    dist = {}                         # settled nodes: final cost
+    pq = [(0, source)]                # (cost so far, node), cheapest pops first
+    while pq:
+        cost, node = heapq.heappop(pq)
+        if node in dist:              # stale entry: a cheaper one already settled it
+            continue
+        dist[node] = cost
+        for nbr, w in graph[node].items():
+            if nbr not in dist:
+                heapq.heappush(pq, (cost + w, nbr))
+    del dist[source]                  # the harness wants costs *to others* only
+    return dist
 
 
 def forwarding_table(graph, source):
@@ -48,7 +59,26 @@ def forwarding_table(graph, source):
     works, but think about what a router does when two shortest paths tie, and
     pick a rule. Say which in observation.md.
     """
-    raise NotImplementedError("implement the forwarding table")
+    # Same loop as dijkstra(), but every heap entry also remembers which
+    # neighbour of `source` the path left by. Tie rule: the heap orders by
+    # (cost, first_hop, node), so among equal-cost paths the one whose first hop
+    # sorts lowest settles the node first. Deterministic, and it pins the
+    # traffic to one interface (a real router would install both: ECMP).
+    table = {}
+    settled = set()
+    pq = [(0, "", source)]
+    while pq:
+        cost, hop, node = heapq.heappop(pq)
+        if node in settled:
+            continue
+        settled.add(node)
+        if node != source:
+            table[node] = hop
+        for nbr, w in graph[node].items():
+            if nbr not in settled:
+                # leaving the source: the first hop is the neighbour itself
+                heapq.heappush(pq, (cost + w, nbr if node == source else hop, nbr))
+    return table
 
 
 def link_down(graph, a, b):

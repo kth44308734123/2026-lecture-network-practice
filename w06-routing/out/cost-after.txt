@@ -1,0 +1,25 @@
+===== r1 : show ip route ospf (r1 eth0 cost 100, after) =====
+O   172.18.0.0/16 [110/30] via 172.19.0.2, eth1, weight 1, 00:00:33
+O   172.19.0.0/16 [110/10] is directly connected, eth1, weight 1, 00:01:48
+O>* 172.20.0.0/16 [110/20] via 172.19.0.2, eth1, weight 1, 00:00:33
+
+===== r2 : show ip route ospf (r1 eth0 cost 100, after) =====
+O   172.18.0.0/16 [110/10] is directly connected, eth0, weight 1, 00:08:04
+O>* 172.19.0.0/16 [110/20] via 172.18.0.3, eth0, weight 1, 00:01:43
+  *                        via 172.20.0.2, eth1, weight 1, 00:01:43
+O   172.20.0.0/16 [110/10] is directly connected, eth1, weight 1, 00:08:04
+
+===== r3 : show ip route ospf (r1 eth0 cost 100, after) =====
+O>* 172.18.0.0/16 [110/20] via 172.20.0.3, eth1, weight 1, 00:00:34
+O   172.19.0.0/16 [110/10] is directly connected, eth0, weight 1, 00:08:04
+O   172.20.0.0/16 [110/10] is directly connected, eth1, weight 1, 00:08:04
+
+eth0 is up
+  Router ID 1.1.1.1, Network Type BROADCAST, Cost: 100
+eth1 is up
+  Router ID 1.1.1.1, Network Type BROADCAST, Cost: 10
+
+Neighbor ID     Pri State           Up Time         Dead Time Address         Interface                        RXmtL RqstL DBsmL
+2.2.2.2           1 Full/DR         7m13s             36.722s 172.18.0.2      eth0:172.18.0.3                      0     0     0
+3.3.3.3           1 Full/DR         1m49s             36.677s 172.19.0.2      eth1:172.19.0.3                      0     0     0
+

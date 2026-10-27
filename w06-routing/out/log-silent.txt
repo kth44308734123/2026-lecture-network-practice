@@ -1,0 +1,86 @@
+# SILENT: r3 eth0 (r3-r1 link, 172.19/16) iptables DROP in+out, carrier stays up
+# action start (epoch) 1791260451.624; action command returned 1791260451.796 (took 0.172s)
+# action output: ['', '']
+
+[t=-2.37s (poll began -2.50)] r2 state change
+-- neighbors:
+1.1.1.1 Full/Backup eth0:172.18.0.2
+3.3.3.3 Full/DR eth1:172.20.0.3
+-- routes:
+O   172.18.0.0/16 [110/10] is directly connected, eth0, weight 1
+O>* 172.19.0.0/16 [110/20] via 172.18.0.3, eth0, weight 1
+  *                        via 172.20.0.2, eth1, weight 1
+O   172.20.0.0/16 [110/10] is directly connected, eth1, weight 1
+
+[t=-2.37s (poll began -2.50)] r1 state change
+-- neighbors:
+2.2.2.2 Full/DR eth0:172.18.0.3
+3.3.3.3 Full/DR eth1:172.19.0.3
+-- routes:
+O   172.18.0.0/16 [110/10] is directly connected, eth0, weight 1
+O   172.19.0.0/16 [110/10] is directly connected, eth1, weight 1
+O>* 172.20.0.0/16 [110/20] via 172.18.0.2, eth0, weight 1
+  *                        via 172.19.0.2, eth1, weight 1
+
+[t=-2.37s (poll began -2.50)] r3 state change
+-- neighbors:
+1.1.1.1 Full/Backup eth0:172.19.0.2
+2.2.2.2 Full/Backup eth1:172.20.0.2
+-- routes:
+O>* 172.18.0.0/16 [110/20] via 172.19.0.3, eth0, weight 1
+  *                        via 172.20.0.3, eth1, weight 1
+O   172.19.0.0/16 [110/10] is directly connected, eth0, weight 1
+O   172.20.0.0/16 [110/10] is directly connected, eth1, weight 1
+
+[t=+33.08s (poll began +32.99)] r3 state change
+-- neighbors:
+2.2.2.2 Full/Backup eth1:172.20.0.2
+-- routes:
+O>* 172.18.0.0/16 [110/20] via 172.19.0.3, eth0, weight 1
+  *                        via 172.20.0.3, eth1, weight 1
+O   172.19.0.0/16 [110/10] is directly connected, eth0, weight 1
+O   172.20.0.0/16 [110/10] is directly connected, eth1, weight 1
+
+[t=+33.09s (poll began +33.00)] r2 state change
+-- neighbors:
+1.1.1.1 Full/Backup eth0:172.18.0.2
+3.3.3.3 Full/DR eth1:172.20.0.3
+-- routes:
+O   172.18.0.0/16 [110/10] is directly connected, eth0, weight 1
+O>* 172.19.0.0/16 [110/20] via 172.20.0.2, eth1, weight 1
+O   172.20.0.0/16 [110/10] is directly connected, eth1, weight 1
+
+[t=+33.09s (poll began +33.00)] r1 state change
+-- neighbors:
+2.2.2.2 Full/DR eth0:172.18.0.3
+3.3.3.3 Full/DR eth1:172.19.0.3
+-- routes:
+O   172.18.0.0/16 [110/10] is directly connected, eth0, weight 1
+O   172.19.0.0/16 [110/30] via 172.18.0.2, eth0, weight 1
+O>* 172.20.0.0/16 [110/20] via 172.18.0.2, eth0, weight 1
+
+[t=+33.17s (poll began +33.08)] r3 state change
+-- neighbors:
+2.2.2.2 Full/Backup eth1:172.20.0.2
+-- routes:
+O>* 172.18.0.0/16 [110/20] via 172.20.0.3, eth1, weight 1
+O   172.19.0.0/16 [110/10] is directly connected, eth0, weight 1
+O   172.20.0.0/16 [110/10] is directly connected, eth1, weight 1
+
+[t=+38.87s (poll began +38.77)] r2 state change
+-- neighbors:
+1.1.1.1 Full/Backup eth0:172.18.0.2
+3.3.3.3 Full/DR eth1:172.20.0.3
+-- routes:
+O   172.18.0.0/16 [110/10] is directly connected, eth0, weight 1
+O>* 172.19.0.0/16 [110/20] via 172.18.0.3, eth0, weight 1
+  *                        via 172.20.0.2, eth1, weight 1
+O   172.20.0.0/16 [110/10] is directly connected, eth1, weight 1
+
+[t=+38.87s (poll began +38.78)] r1 state change
+-- neighbors:
+2.2.2.2 Full/DR eth0:172.18.0.3
+-- routes:
+O   172.18.0.0/16 [110/10] is directly connected, eth0, weight 1
+O   172.19.0.0/16 [110/10] is directly connected, eth1, weight 1
+O>* 172.20.0.0/16 [110/20] via 172.18.0.2, eth0, weight 1

@@ -1,0 +1,37 @@
+Measured with a Python poller (3 threads, one per router, each loops `docker compose exec -T rX vtysh -c "show ip route ospf" -c "show ip ospf neighbor"`
+back-to-back, ~0.1 s per poll) and time.time() stamps. t=0 is the moment just before the command that causes the event.
+Resolution is therefore about 0.1 s. Raw event logs: log-cut.txt, log-restore.txt, log-silent.txt, log-silent-heal.txt.
+
+Configured timers (show ip ospf interface, all routers/interfaces): Hello 10 s, Dead 40 s, Wait 40 s, Retransmit 5 s.
+(No hello/dead lines in topology/*/frr.conf: these are FRR defaults.)
+
+--- B4: cut. `ip link set eth1 down` on r1 (eth1 = 172.19.0.0/16 = r1-r3 link) ---
+cut epoch 1791260309.477 (command returned after 0.082 s)
+Routing tables of ALL three routers were already correct at the first poll after the cut: t <= +0.13 s (poll began +0.03 s).
+  r1: neighbor r3 vanished at <= +0.13 s. Mechanism: kernel link-down event on the local interface (not the dead timer).
+  r2, r3: route tables changed at <= +0.13 s through LSA flooding from r1 (they did not time anything out).
+  r3 only dropped neighbor r1 from its neighbor table at +31.14 s (dead-interval timer; 40 s dead minus 0-10 s since last hello; its table did not need it).
+Prediction from hello/dead: 40 s dead interval (so 30-40 s) for a failure that is detected only by silence.
+Measured 0.13 s ~= 300x faster, because an interface-down is a local, instant signal. It does NOT match the dead interval and should not be reported as if it did.
+
+--- silent variant (neighbor vanishes without link-down) ---
+`iptables -A INPUT -i eth0 -j DROP; iptables -A OUTPUT -o eth0 -j DROP` on r3 (r3 eth0 = 172.19.0.2 = r3-r1 link). Carrier stays up.
+drop epoch 1791260451.624 (commands returned in 0.172 s)
+  +33.08 s  r3 declares r1 dead (dead timer)           -> r3 route change at +33.17 s
+  +33.09 s  r1 and r2 tables change (they learn of it via LSA flooded by r3 through r2). r1 route to 172.19/16 becomes 30 via r2
+  +38.87 s  r1 declares r3 dead (own dead timer)       -> r2 re-adds ECMP route to 172.19/16 via r1 (r1 now holds that subnet alone)
+Table first reflects the failure at +33.1 s (first detector = r3) and the slowest router's own timeout fires at +38.9 s.
+Consistent with Dead = 40 s: the two timers expired 33.1 s and 38.9 s after the drop (each = 40 s minus time since that router's last hello from the peer, which is 0-10 s).
+Heal (iptables -D, same two rules): r1 saw r3 in Init at +1.07 s, Full at +5.33 s, r1 table back to before-state at +5.43 s,
+r3 table back to before-state at +11.13 s, DR/Backup roles settled at +15.32 s (cosmetic). Neighbor/table values equal the before-state after +11.13 s.
+
+--- B5: restore. `ip link set eth1 up` on r1 ---
+restore epoch 1791260364.608 (command returned after 0.085 s)
+  +0.16 s   r1 gets 172.19/16 back as directly connected (kernel link-up); r3 sees r1 in Init (hello heard), r2 adds ECMP route to 172.19/16 via r1 already at +0.17 s
+  +5.84 s   r1-r3 adjacency Full (r1 view; r1 briefly shows 172.19/16 at cost 30 via r2 until +5.92 s)
+  +5.92 s   r1 table equals before-state (ECMP to 172.20/16 via both)
+  +10.90 s  r3 table equals before-state (ECMP to 172.18/16 via both). r2 already equal since +0.17 s.
+Time until ALL THREE tables equal the before-state: 10.90 s. (down: <=0.13 s with link-down detection, ~33-39 s when silent.)
+Why not symmetric: going away is announced by a local event (carrier loss) or by lack of hellos (Dead 40 s);
+coming up cannot be known until a Hello is heard (every 10 s), then Down -> Init -> 2-Way -> ExStart -> Exchange -> Loading -> Full (DB description exchange), then SPF.
+Here 5.8 s to Full and 10.9 s to the final table; a neighbor must also be *trusted* (full DB sync) before routes via it are used, whereas withdrawal needs no handshake.
